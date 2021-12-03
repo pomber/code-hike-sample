@@ -34,7 +34,7 @@ function lorem(ipsum, dolor = 1) {
 
 You can specify a list of line numbers
 
-```js focus=1,3:4 bg=4
+```js focus=1,3:4
 function lorem(ipsum, dolor = 1) {
   const sit = ipsum == null ? 0 : ipsum.sit;
   dolor = sit - amet(dolor);
@@ -51,3 +51,447 @@ function lorem(ipsum, dolor = 1) {
   return sit ? consectetur(ipsum) : [];
 }
 ```
+
+# Filenames
+
+Adding a filename to the codeblock
+
+```js app.js
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null ? 0 : ipsum.sit;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+```
+
+## Tabs
+
+To add more tabs, wrap multiple codeblocks with `<CH.Code/>`:
+
+<CH.Code>
+
+```js app.js
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null ? 0 : ipsum.sit;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+```
+
+```css styles.css
+.lorem {
+  color: #fff;
+  padding: 10px;
+  background: #000;
+}
+```
+
+</CH.Code>
+
+## Panels
+
+The _editor_ can be splitted vertically in two panels using `---`
+
+<CH.Code>
+
+```js app.js
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null ? 0 : ipsum.sit;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+```
+
+---
+
+```css styles.css
+.lorem {
+  color: #fff;
+  padding: 10px;
+  background: #000;
+}
+```
+
+</CH.Code>
+
+# Annotations
+
+There are a few more annotations that can be used to highlight code.
+
+### `box` annotation
+
+```js box=2[15:43]
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null ? 0 : ipsum.sit;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor) : [];
+}
+```
+
+### `bg` annotation
+
+```js bg=2:4
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null ? 0 : ipsum.sit;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor) : [];
+}
+```
+
+# Comment annotations
+
+You can use comments inside the code to make the focus relative.
+
+```js
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null && 0;
+  dolor = sit - amet(dolor);
+  // focus
+  return sit ? consectetur(ipsum) : [];
+}
+
+// focus(1:4)
+function adipiscing(...elit) {
+  console.log(elit);
+  return elit.map((ipsum) => ipsum.sit);
+}
+
+// focus[13:17]
+console.log("hey");
+```
+
+Same with other annotations like `bg` and `box`.
+
+```js
+// bg(1:2)
+function foo() {
+  console.log("hover me");
+  // box[3:10]
+  return 8;
+}
+```
+
+You can pass a string parameter to comment annotations
+
+```js index.js
+function lorem(ipsum, dolor = 1) {
+  // bg(1:3) linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)
+  const sit = ipsum == null && 0;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+
+function adipiscing(...elit) {
+  console.log(elit);
+  // box[19:38] aqua
+  return elit.map((ipsum) => ipsum.sit);
+}
+```
+
+## Links and labels
+
+And now we introduce two more annotations: `link` and `label`
+
+```js focus=4,8
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null && 0;
+  dolor = sit - amet(dolor);
+  // link[16:26] https://github.com/code-hike/codehike
+  return sit ? consectetur(ipsum) : [];
+}
+
+function adipiscing(...elit) {
+  // label something something
+  console.log("hover me");
+  return elit.map((ipsum) => ipsum.sit);
+}
+```
+
+# Code Links
+
+Lorem ipsum dolor sit amet.
+
+<CH.Section>
+
+Consectetur adipiscing elit, sed do eiusmod tempor [incididunt](focus://4:7) ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget.
+
+```js
+function lorem(ipsum, dolor) {
+  const sit = "lorem ipsum";
+  dolor = elit(dolor, 3);
+  while (++consectetur < amet) {
+    sit.eiusmod(150);
+    tempor(ipsum, adipiscing);
+  }
+}
+```
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum [dolore](focus://1[23:27],3) eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+
+</CH.Section>
+
+## With multiple files
+
+<CH.Section>
+
+Lorem dolor sit amet, [javascript](focus://index.js#2:3) adipiscing elit, sed do eiusmod [styles](focus://styles.css#2:3) incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+<CH.Code>
+
+```js index.js
+function lorem(ipsum, dolor) {
+  const sit = ipsum - amet(dolor);
+  return sit + "lorem ipsum";
+}
+```
+
+```css styles.css
+.lorem-ipsum > .dolor pre {
+  background-color: var(--color-bg);
+  padding: 1em 0px 10vh 300px;
+}
+```
+
+</CH.Code>
+
+</CH.Section>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
+# Spotlight
+
+This is how to use the `<CH.Spotlight>` component. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quia! Quidem, quisquam.
+
+<CH.Spotlight>
+
+```js app.js
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null && 0;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+```
+
+---
+
+Change focus
+
+```js app.js focus=2:4
+
+```
+
+---
+
+Or change the code
+
+```js app.js focus=6:10
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null && 0;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+
+function adipiscing(...elit) {
+  console.log(elit);
+  return elit.map((ipsum) => ipsum.sit);
+}
+```
+
+---
+
+Or change the file
+
+<CH.Code>
+
+```js app.js focus=1:4
+function adipiscing(...elit) {
+  console.log(elit);
+  return elit.map((ipsum) => ipsum.sit);
+}
+```
+
+---
+
+```css styles.css
+.lorem {
+  color: #fff;
+  padding: 10px;
+  background: #000;
+}
+```
+
+</CH.Code>
+
+---
+
+### By the way
+
+- you can
+- put any
+- markdown
+- here
+
+👍
+
+```js app.js
+
+```
+
+</CH.Spotlight>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
+# Scrollycoding with preview
+
+Lorem ipsum dolor sit amet.
+
+<CH.Scrollycoding preset="https://codesandbox.io/s/w5wfe">
+
+## Step 1
+
+Lorem ipsum dolor sit amet, consectetur adipiscing something about points, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+> Nova in illis at dabat legi harundine non, ova miratur? _Quid in_ sole aer
+> ad diffusa illis voluisti fidensque coniugiale laniata curam. Aras rivus
+> eripuit, qua fistula haec partus; serpens, negat.
+
+Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget.
+
+Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
+
+```jsx src/App.js
+import { motion } from "framer-motion";
+
+export default function App() {
+  const bg = "hsl(20, 100%, 50%)";
+  return (
+    <motion.div
+      className="swatch"
+      animate={{ backgroundColor: bg }}
+      transition={{ duration: 1 }}
+    />
+  );
+}
+```
+
+---
+
+## Step 2
+
+Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in.
+
+Praesent elementum facilisis leo vel fringilla est ullamcorper eget.
+
+Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+
+Morbi quis commodo.
+
+```jsx src/App.js focus=1,4,6:10
+import { motion } from "framer-motion";
+
+export default function App() {
+  const bg = "hsl(110, 100%, 50%)";
+  return (
+    <motion.div
+      className="swatch"
+      animate={{ backgroundColor: bg }}
+      transition={{ duration: 1 }}
+    />
+  );
+}
+```
+
+---
+
+## Step 3
+
+Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu.
+
+- Nisi lacus sed viverra tellus in
+- Nibh cras pulvinar mattis nunc sed
+- Luctus accumsan tortor posuere ac
+
+Ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+
+```jsx src/App.js focus=1,4,6:10
+import { motion } from "framer-motion";
+
+export default function App() {
+  const bg = "hsl(200, 100%, 50%)";
+  return (
+    <motion.div
+      className="swatch"
+      animate={{ backgroundColor: bg }}
+      transition={{ duration: 1 }}
+    />
+  );
+}
+```
+
+---
+
+## Step 4
+
+Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt.
+
+Sed blandit libero volutpat sed cras.
+
+- Nisi lacus sed viverra tellus in
+- Nibh cras pulvinar mattis nunc sed
+
+Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae.
+
+```jsx src/App.js focus=1,4,6:10
+import { motion } from "framer-motion";
+
+export default function App() {
+  const bg = "hsl(290, 100%, 50%)";
+  return (
+    <motion.div
+      className="swatch"
+      animate={{ backgroundColor: bg }}
+      transition={{ duration: 1 }}
+    />
+  );
+}
+```
+
+---
+
+## Step 5
+
+Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in.
+
+Praesent elementum facilisis leo vel fringilla est ullamcorper eget.
+
+Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat.
+
+Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra.
+
+- Fringilla ut morbi tincidunt augue interdum velit euismod.
+- Luctus accumsan tortor posuere ac ut consequat semper viverra.
+
+Morbi quis commodo.
+
+```jsx src/App.js focus=1,4,6:10
+import { motion } from "framer-motion";
+
+export default function App() {
+  const bg = "hsl(10, 100%, 50%)";
+  return (
+    <motion.div
+      className="swatch"
+      animate={{ backgroundColor: bg }}
+      transition={{ duration: 1 }}
+    />
+  );
+}
+```
+
+</CH.Scrollycoding>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
+Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
